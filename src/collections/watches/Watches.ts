@@ -1,0 +1,40 @@
+import { CollectionConfig } from "payload";
+
+export const Watches:CollectionConfig = {
+    slug:"watches",
+    admin:{
+        group:"Watches"
+    },
+    fields:[
+        {
+            name:"name",
+            type:"text",
+            required:true
+        },
+        {
+            name:'dials',
+            type:'array',
+            required:true,
+            fields:[
+                {
+                    name:'dial',
+                    type:'relationship',
+                    relationTo:'watch-dials',
+                    required:true
+                }
+            ]
+        },{
+            name:'materials',
+            type:'array',
+            required:true,
+            fields:[
+                {
+                    name:'material',
+                    type:'relationship',
+                    relationTo:'watch-materials',
+                    required:true
+                }
+            ]
+        }
+    ]
+}
