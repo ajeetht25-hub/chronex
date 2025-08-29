@@ -1,7 +1,7 @@
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
-// import Footer from "./_components/layout/Footer";
+import Footer from "./_components/layout/Footer";
 
 const syne = Syne({ subsets: ["latin"] });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
         {/* <Image src='/logo/logo.png' alt="Vasuki Logo" className="mt-10"  width={100} height={300}/> */}
         {/* <Navbar /> */}
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
