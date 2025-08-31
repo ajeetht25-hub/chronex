@@ -1,4 +1,4 @@
-import "@repo/ui/globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import Footer from "./_components/layout/Footer";

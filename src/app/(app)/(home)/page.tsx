@@ -9,10 +9,10 @@ const Page = () => {
   return (
     <div>
       <Hero />
-      <KnowMore />
-      <Videos />
-      <WhyUs />
-      <FAQ />
+      {/* <KnowMore /> */}
+      {/* <Videos /> */}
+      {/* <WhyUs /> */}
+      {/* <FAQ /> */}
     </div>
   );
 };
