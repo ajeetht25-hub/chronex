@@ -1,4 +1,5 @@
 import React from "react";
+import ViewCanvas from "../_components/Canvas/ViewCanvas";
 
 export default function Layout({
   children,
@@ -8,6 +9,7 @@ export default function Layout({
   return (
     <main>
       {children}
+      <ViewCanvas />
     </main>
   );
 }
