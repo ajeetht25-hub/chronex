@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@gsap/react": "^2.1.2",
     "@payloadcms/db-postgres": "^3.53.0",
     "@payloadcms/next": "^3.53.0",
     "@payloadcms/payload-cloud": "^3.53.0",
@@ -22,6 +21,7 @@
     "@react-three/fiber": "^9.3.0",
     "@t3-oss/env-nextjs": "^0.13.8",
     "@types/three": "^0.179.0",
+    "@vis.gl/react-google-maps": "^1.5.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.6.0",
@@ -51,7 +51,6 @@
     "eslint-config-next": "15.5.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4",
-    "tw-animate-css": "^1.3.7",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5"
   }

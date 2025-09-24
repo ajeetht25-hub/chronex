@@ -29,19 +29,18 @@ export default buildConfig({
   collections: [Users, Media, WatchDials, WatchMaterials, WatchRequests,Watches],
   globals: [ShopLocations,WatchImages],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: env.DATABASE_URI || '',
     },
   }),
   sharp,
   plugins: [
     s3Storage({
-
       collections: {
         media: {
           prefix: 'media',

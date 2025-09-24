@@ -24,4 +24,6 @@ const Watch = forwardRef<Group, WatchProps>((
 }
 );
 
+Watch.displayName = 'Watch';
+
 export default Watch
