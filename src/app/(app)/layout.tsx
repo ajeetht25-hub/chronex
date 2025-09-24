@@ -1,3 +1,4 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import "./globals.css"
 import { Syne } from "next/font/google";
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-black ${syne.className}`}>
         {children}
+        <Footer />
       </body>
     </html>
   );

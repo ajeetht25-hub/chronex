@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@gsap/react": "^2.1.2",
     "@payloadcms/db-postgres": "^3.53.0",
     "@payloadcms/next": "^3.53.0",
     "@payloadcms/payload-cloud": "^3.53.0",
@@ -45,9 +46,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.174.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.7",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5"
   }

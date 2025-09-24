@@ -69,6 +69,10 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'watch-dials': WatchDial;
+    'watch-materials': WatchMaterial;
+    'watch-requests': WatchRequest;
+    watches: Watch;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,15 +81,25 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'watch-dials': WatchDialsSelect<false> | WatchDialsSelect<true>;
+    'watch-materials': WatchMaterialsSelect<false> | WatchMaterialsSelect<true>;
+    'watch-requests': WatchRequestsSelect<false> | WatchRequestsSelect<true>;
+    watches: WatchesSelect<false> | WatchesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: string;
+    defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    shopLocations: ShopLocation;
+    'watch-images': WatchImage;
+  };
+  globalsSelect: {
+    shopLocations: ShopLocationsSelect<false> | ShopLocationsSelect<true>;
+    'watch-images': WatchImagesSelect<false> | WatchImagesSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -118,7 +132,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: string;
+  id: number;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -142,8 +156,9 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: string;
+  id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -155,26 +170,110 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    watch?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-dials".
+ */
+export interface WatchDial {
+  id: number;
+  name: string;
+  colorCode: string;
+  price: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-materials".
+ */
+export interface WatchMaterial {
+  id: number;
+  name: string;
+  price: number;
+  colorCode: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-requests".
+ */
+export interface WatchRequest {
+  id: number;
+  customerDetails: {
+    name: string;
+    email: string;
+    phone: string;
+  };
+  watchMaterial: number | WatchMaterial;
+  watchDial: number | WatchDial;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watches".
+ */
+export interface Watch {
+  id: number;
+  name: string;
+  dials: {
+    dial: number | WatchDial;
+    id?: string | null;
+  }[];
+  materials: {
+    material: number | WatchMaterial;
+    id?: string | null;
+  }[];
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: string;
+  id: number;
   document?:
     | ({
         relationTo: 'users';
-        value: string | User;
+        value: number | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: string | Media;
+        value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'watch-dials';
+        value: number | WatchDial;
+      } | null)
+    | ({
+        relationTo: 'watch-materials';
+        value: number | WatchMaterial;
+      } | null)
+    | ({
+        relationTo: 'watch-requests';
+        value: number | WatchRequest;
+      } | null)
+    | ({
+        relationTo: 'watches';
+        value: number | Watch;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -184,10 +283,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: string;
+  id: number;
   user: {
     relationTo: 'users';
-    value: string | User;
+    value: number | User;
   };
   key?: string | null;
   value?:
@@ -207,7 +306,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: string;
+  id: number;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -241,6 +340,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -252,6 +352,80 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        watch?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-dials_select".
+ */
+export interface WatchDialsSelect<T extends boolean = true> {
+  name?: T;
+  colorCode?: T;
+  price?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-materials_select".
+ */
+export interface WatchMaterialsSelect<T extends boolean = true> {
+  name?: T;
+  price?: T;
+  colorCode?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-requests_select".
+ */
+export interface WatchRequestsSelect<T extends boolean = true> {
+  customerDetails?:
+    | T
+    | {
+        name?: T;
+        email?: T;
+        phone?: T;
+      };
+  watchMaterial?: T;
+  watchDial?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watches_select".
+ */
+export interface WatchesSelect<T extends boolean = true> {
+  name?: T;
+  dials?:
+    | T
+    | {
+        dial?: T;
+        id?: T;
+      };
+  materials?:
+    | T
+    | {
+        material?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -284,6 +458,72 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "shopLocations".
+ */
+export interface ShopLocation {
+  id: number;
+  locations?:
+    | {
+        shopName: string;
+        latitude: number;
+        longitude: number;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-images".
+ */
+export interface WatchImage {
+  id: number;
+  images: {
+    material: number | WatchMaterial;
+    dial: number | WatchDial;
+    image: number | Media;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "shopLocations_select".
+ */
+export interface ShopLocationsSelect<T extends boolean = true> {
+  locations?:
+    | T
+    | {
+        shopName?: T;
+        latitude?: T;
+        longitude?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "watch-images_select".
+ */
+export interface WatchImagesSelect<T extends boolean = true> {
+  images?:
+    | T
+    | {
+        material?: T;
+        dial?: T;
+        image?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
