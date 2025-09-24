@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@/components/ui/button";
 import React, { useState, useEffect, useRef } from "react";
 import { Environment, View } from "@react-three/drei";
 import AlternativeWatch from "../Scenes/AlternativeWatch";
-import { useIsMobile } from "@repo/ui/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useStore } from "@/app/(app)/_store/store";
 import { X } from "lucide-react";
 import { Canvas, useThree } from "@react-three/fiber";

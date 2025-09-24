@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@repo/ui/components/accordion";
+} from "@/components/ui/accordion";
 const FAQCardContent = [
   {
     title: "Lorem Ipsum?",

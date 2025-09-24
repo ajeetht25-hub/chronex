@@ -1,9 +1,6 @@
-import { getPayload } from 'payload'
-import configPromise from '@payload-config'
-import { cache } from 'react'
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export const getPayloadUtil = cache(async () => {
-  return await getPayload({
-    config: configPromise,
-  })
-})
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}

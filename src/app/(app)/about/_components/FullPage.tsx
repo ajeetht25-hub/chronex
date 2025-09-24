@@ -3,9 +3,9 @@
 import { View } from "@react-three/drei";
 import React, { useEffect } from "react";
 import AboutAnimation from "./AboutAnimation";
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@/components/ui/button";
 import Navbar from "../../_components/layout/Navbar";
-import { useIsMobile } from "@repo/ui/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useStore } from "../../_store/store";
 
 const FullPage = () => {

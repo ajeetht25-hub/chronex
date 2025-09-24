@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@/lib/utils";
 
 const Navbar = ({isFixed}: {isFixed?: boolean}) => {
   return (

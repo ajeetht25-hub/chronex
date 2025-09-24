@@ -5,8 +5,8 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import emblaStyle from "./styles/embla.module.css";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import { cn } from "@repo/ui/lib/utils";
 import style from "./styles/horizontalcarousel.module.css";
+import {cn} from "@/lib/utils";
 
 type PropType = {
   slides: React.ReactNode[];
