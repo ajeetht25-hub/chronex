@@ -15,6 +15,7 @@ import { WatchDials } from './collections/watches/WatchDial'
 import { WatchMaterials } from './collections/watches/WatchMaterials'
 import { WatchImages } from './collections/watches/WatchImages'
 import { Watches } from './collections/watches/Watches'
+import { Contact } from './collections/Contact'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,7 +27,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, WatchDials, WatchMaterials, WatchRequests,Watches],
+  collections: [Users, Media, WatchDials, WatchMaterials, WatchRequests,Watches,Contact],
   globals: [ShopLocations,WatchImages],
   editor: lexicalEditor(),
   secret: env.PAYLOAD_SECRET || '',
