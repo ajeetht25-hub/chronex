@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css"
 import { Syne } from "next/font/google";
 import Footer from "./_components/layout/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const syne = Syne({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`bg-black ${syne.className}`}>
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

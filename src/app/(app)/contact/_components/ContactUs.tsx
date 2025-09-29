@@ -5,8 +5,8 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { submitForm } from "../_actions/submit-form";
-// import { toast } from "@/components/ui/sonner";
+import { submitForm } from "../../_actions/fetch";
+import { toast } from "@/components/ui/sonner";
 
 const ContactUs = () => {
   const [loading, setLoading] = React.useState(false);
@@ -23,10 +23,10 @@ const ContactUs = () => {
       await submitForm(name, email, message);
       // @ts-ignore
       e.target.reset();
-      // toast.success("Thank you for your message!");
+      toast.success("Thank you for your message!");
     } catch (error) {
       console.log(error);
-      // toast.error("Form submission failed");
+      toast.error("Form submission failed");
     } finally {
       setLoading(false);
     }
