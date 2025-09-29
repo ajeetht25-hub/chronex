@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import ProductHero from "./_components/sections/ProductHero";
 import Customizing from "./_components/sections/Customizing";
