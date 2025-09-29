@@ -1,5 +1,6 @@
 "use server";
 
+import { WatchRequest } from "@/payload-types";
 import configPromise from "@/payload.config";
 import { getPayload } from "payload";
 import { cache } from "react";
@@ -34,4 +35,36 @@ export const fetchLocation = async () => {
     });
 
     return locations.locations;
+}
+
+export async function getWatchData() {
+    const payload = await getPayloadUtil();
+    const materialDocs = await payload.find({
+        collection: 'watch-materials',
+        pagination:false,
+        limit: 100,
+    })
+    const dialDocs = await payload.find({
+        collection:'watch-dials',
+        pagination:false,
+        limit:100
+    })
+    const imageDocs = await payload.findGlobal({
+        slug:'watch-images',
+    })
+    return {
+        materials:materialDocs.docs,
+        dials:dialDocs.docs,
+        images:imageDocs.images
+    }
+}
+
+export async function customerSubmitAction(input:Omit<WatchRequest,'id' | 'createdAt' | 'updatedAt'>) {
+    const payload = await getPayloadUtil();
+    await payload.create({
+        collection: 'watch-requests', 
+        data: {
+            ...input,
+        }
+    });
 }

@@ -54,7 +54,6 @@ export type SupportedTimezones =
   | 'Asia/Singapore'
   | 'Asia/Tokyo'
   | 'Asia/Seoul'
-  | 'Australia/Brisbane'
   | 'Australia/Sydney'
   | 'Pacific/Guam'
   | 'Pacific/Noumea'
@@ -73,6 +72,7 @@ export interface Config {
     'watch-materials': WatchMaterial;
     'watch-requests': WatchRequest;
     watches: Watch;
+    contact: Contact;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -85,6 +85,7 @@ export interface Config {
     'watch-materials': WatchMaterialsSelect<false> | WatchMaterialsSelect<true>;
     'watch-requests': WatchRequestsSelect<false> | WatchRequestsSelect<true>;
     watches: WatchesSelect<false> | WatchesSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -142,13 +143,6 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
   password?: string | null;
 }
 /**
@@ -218,6 +212,7 @@ export interface WatchRequest {
   };
   watchMaterial: number | WatchMaterial;
   watchDial: number | WatchDial;
+  status?: ('pending' | 'approved' | 'rejected') | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -236,6 +231,18 @@ export interface Watch {
     material: number | WatchMaterial;
     id?: string | null;
   }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: number;
+  name: string;
+  email: string;
+  message: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -269,6 +276,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'watches';
         value: number | Watch;
+      } | null)
+    | ({
+        relationTo: 'contact';
+        value: number | Contact;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -326,13 +337,6 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -403,6 +407,7 @@ export interface WatchRequestsSelect<T extends boolean = true> {
       };
   watchMaterial?: T;
   watchDial?: T;
+  status?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -424,6 +429,17 @@ export interface WatchesSelect<T extends boolean = true> {
         material?: T;
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  message?: T;
   updatedAt?: T;
   createdAt?: T;
 }
