@@ -41,6 +41,12 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
               <nav className="space-y-4">
                 <Link
+                  href="/"
+                  className="block text-black hover:text-gray-700"
+                >
+                  Home
+                </Link>
+                <Link
                   href="/about"
                   className="block text-black hover:text-gray-700"
                 >

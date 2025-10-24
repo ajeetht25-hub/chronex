@@ -23,6 +23,12 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
         <div className="flex">
           <nav className="flex items-center gap-4">
             <Link
+              href="/"
+              className="block text-white hover:text-gray-200"
+            >
+              Home
+            </Link>
+            <Link
               href="/about"
               className="block text-white hover:text-gray-200"
             >

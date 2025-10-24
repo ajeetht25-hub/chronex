@@ -4,20 +4,20 @@ import WhyUsCard from "../../../_components/WhyUsCard";
 const WhyUsCardContent = [
   {
     icon: "/icons/icon1.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+  title: "Heritage Oyster timepiece",
+  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
     link: "/about",
   },
   {
     icon: "/icons/icon2.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+  title: "Heritage Oyster timepiece",
+  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
     link: "/about",
   },
   {
     icon: "/icons/icon3.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+  title: "Heritage Oyster timepiece",
+  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
     link: "/about",
   },
 ];

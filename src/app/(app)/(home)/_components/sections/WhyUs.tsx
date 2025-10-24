@@ -4,20 +4,20 @@ import WhyUsCard from "../../../_components/WhyUsCard";
 const WhyUsCardContent = [
   {
     icon: "/icons/icon1.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title: "Precision Crafted Timepiece",
+    desc: "Engineered with an automatic movement, robust case construction, and refined finishing for lasting performance.",
     link: "#",
   },
   {
     icon: "/icons/icon2.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title: "Timeless Design Language",
+    desc: "A balanced dial and polished indices create an elegant silhouette that reads as well in the boardroom as on the wrist.",
     link: "#",
   },
   {
     icon: "/icons/icon3.svg",
-    title: "Lorem Ipsum Si dolor amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    title: "Bespoke Custom Finishes",
+    desc: "Choose from a selection of straps, dial treatments, and engravings to personalize your watch with subtlety.",
     link: "#",
   },
 ];
@@ -31,10 +31,10 @@ const WhyUs = () => {
           Why Us
         </h2>
         <div className="text-white lg:w-1/2 text-center">
-          <p className="font-bold text-5xl lg:text-6xl">Lorem Ipsum Si Dolor Amet</p>
+          <p className="font-bold text-5xl lg:text-6xl">Precision Crafted Timepiece</p>
           <p className="text-xl lg:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Each collection reflects decades of horological expertise, marrying
+            mechanical excellence with enduring, refined aesthetics.
           </p>
         </div>
         <div className="flex lg:flex-row flex-col gap-6 pt-5">
