@@ -33,13 +33,19 @@ const Footer = () => {
                 </div>
                 <span className="text-3xl font-semibold">Vasuki</span>
               </div>
-              <Button className="bg-black h-auto text-white text-[1rem] px-12 py-3 rounded">
+              <Link href={"/contact"} className="bg-black h-auto text-white text-[1rem] px-12 py-3 rounded">
                 Contact Us
-              </Button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
               <nav className="space-y-4">
+                <Link
+                  href="/"
+                  className="block text-black hover:text-gray-700"
+                >
+                  Home
+                </Link>
                 <Link
                   href="/about"
                   className="block text-black hover:text-gray-700"
@@ -47,44 +53,36 @@ const Footer = () => {
                   About
                 </Link>
                 <Link
-                  href="/features"
+                  href="/contact"
                   className="block text-black hover:text-gray-700"
                 >
-                  Features
+                  Contact
                 </Link>
                 <Link
-                  href="/pricing"
+                  href="/storelocator"
                   className="block text-black hover:text-gray-700"
                 >
-                  Pricing
+                  Store Locator
                 </Link>
                 <Link
-                  href="/gallery"
+                  href="/products"
                   className="block text-black hover:text-gray-700"
                 >
-                  Gallery
+                  Products
                 </Link>
                 <Link
-                  href="/team"
+                  href="/customer"
                   className="block text-black hover:text-gray-700"
                 >
-                  Team
+                  Customise Watches
                 </Link>
               </nav>
             </div>
           </div>
 
           <div className="mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-white">
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 text-white">
               <div className="text-sm ">© 2025 All Rights Reserved</div>
-              <div className="flex space-x-6 text-sm ">
-                <Link href="/privacy">Privacy Policy</Link>
-                <Link href="/terms">Terms of Use</Link>
-                <Link href="/refunds">Sales and Refunds</Link>
-                <Link href="/legal">Legal</Link>
-                <Link href="/sitemap">Site Map</Link>
-              </div>
-              <div className="text-sm ">+1 860 854-36-89</div>
             </div>
           </div>
         </div>

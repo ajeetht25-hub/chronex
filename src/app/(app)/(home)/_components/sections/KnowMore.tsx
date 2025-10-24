@@ -104,12 +104,11 @@ const KnowMore = () => {
         <div className="lg:block ">{/* img placeholder */}</div>
         <div className="flex flex-col gap-5 justify-end items-end text-end w-full lg:w-3/4 bg-black/30 lg:bg-transparent ">
           <h2 className="font-bold text-4xl lg:text-6xl xl:text-8xl text-right">
-            Lorem Ipsum si dolor amet
+            Heritage Oyster timepiece
           </h2>
           <p className="text-lg lg:text-xl xl:text-2xl lg:w-4/5 text-right">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
+            Designed for daily wear, our watches combine durable engineering
+            with refined detailing to perform reliably while looking impeccable.
           </p>
           <div>
             <Button className="text-black bg-white text-base lg:text-xl font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-xl h-auto">
@@ -127,9 +126,8 @@ const KnowMore = () => {
             Crafting luxurious watches
           </h2>
           <p className="text-lg lg:text-xl xl:text-2xl lg:w-4/5 text-left">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam
+            Our artisans assemble and finish each movement by hand, ensuring
+            precision regulation and a level of quality that endures for years.
           </p>
           <div>
             <Button className="text-black bg-white text-base lg:text-xl font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-xl h-auto hover:bg-gray-100">
@@ -151,32 +149,32 @@ const KnowMore = () => {
             <div className="flex-shrink-0 snap-center flex justify-center lg:justify-start items-center">
               <WatchSpecs
                 no={"01"}
-                title="lorem ipsum"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Automatic Movement"
+                desc="A high-performance automatic caliber with winding efficiency and a multi-day power reserve for consistent accuracy."
               />
             </div>
 
             <div className="flex-shrink-0 snap-center flex justify-center lg:justify-end items-center">
               <WatchSpecs
                 no={"02"}
-                title="lorem ipsum"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Sapphire Crystal"
+                desc="Domed sapphire glass with anti-reflective treatment for clarity and scratch resistance in everyday use."
               />
             </div>
 
             <div className="flex-shrink-0 snap-center flex justify-center lg:justify-start items-center">
               <WatchSpecs
                 no={"03"}
-                title="lorem ipsum"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Water Resistant"
+                desc="Engineered to resist water ingress to 100 meters, suitable for swimming and daily activities with confidence."
               />
             </div>
 
             <div className="flex-shrink-0 snap-center flex justify-center lg:justify-end items-center">
               <WatchSpecs
                 no={"04"}
-                title="lorem ipsum"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Custom Straps"
+                desc="Interchangeable straps in leather, metal, and rubber allow you to tailor the look to any occasion or preference."
               />
             </div>
           </div>

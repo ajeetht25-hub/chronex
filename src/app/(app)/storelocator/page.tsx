@@ -1,5 +1,5 @@
 import { fetchLocation } from "../_actions/fetch";
-// import Navbar from "../_components/layout/Navbar";
+import Navbar from "../_components/layout/Navbar";
 import StoreLocatorMap from "./_components/StoreLocatorMap";
 
 export default async function Page() {
@@ -7,7 +7,7 @@ export default async function Page() {
 
   return (
     <div className="bg-black xl:container xl:mx-auto">
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="flex justify-center items-center pb-10 px-4 flex-col gap-5">
         <h2 className="lg:text-6xl text-2xl text-white text-center lg:w-1/2 font-bold">
           FIND OUR STORE NEAR YOU

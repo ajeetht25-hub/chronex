@@ -179,7 +179,7 @@ const ContactUs = () => {
             <div className="py-4 sm:pt-2">
               <Button
                 disabled={loading}
-                className="h-auto py-3 px-3 lg:py-3 lg:px-8 hover:bg-black uppercase bg-black lg:rounded-full font-bold"
+                className="h-auto py-3 px-3 cursor-pointer lg:py-3 lg:px-8 hover:bg-black uppercase bg-black lg:rounded-full font-bold"
               >
                 Send message
               </Button>
