@@ -24,7 +24,7 @@ export default function ScrollBtnSelector({ items, type, initialSelected = 0, on
   const [selectedIndex, setSelectedIndex] = useState<number>(initialSelected);
   const [visibleItems, setVisibleItems] = useState<Item[]>([]);
   const itemHeight = 70;
-  const itemWidth = 180; // Width for mobile horizontal scroll
+  const itemWidth = 180; 
   const visibleCount = 3;
   
   useEffect(() => {

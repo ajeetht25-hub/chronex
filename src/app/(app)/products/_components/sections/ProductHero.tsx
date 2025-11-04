@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-// import WhyUsCard from "../../../_components/WhyUsCard";
-// import Navbar from "@/app/(app)/_components/layout/Navbar";
 
 const Content = [
   {
@@ -28,14 +26,8 @@ const Content = [
 const ProductHero = () => {
   return (
     <div className="px-5 lg:px-20 xl:container xl:mx-auto pb-3 pt-2">
-      {/* <Navbar /> */}
       <div
         className="relative text-white flex justify-start items-start h-full w-full"
-        // style={{
-        //   backgroundImage: `url(${HeroImg})`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
       >
         <div className=" bg-black bg-opacity-40 w-full h-full relative rounded-2xl lg:rounded-[2.5rem]">
           <div className="">

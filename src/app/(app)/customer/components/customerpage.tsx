@@ -7,15 +7,13 @@ import { MoveLeft, MoveRight, ChevronRight } from "lucide-react";
 import InfiniteScroll from "./Textanimation";
 import Sprite from "./Sprite";
 import { useCustomerSubmitQuery } from "./(forms)/customer-submit-query";
-import { useCustomerStore } from "./(forms)/customer-store";
 
 export default function CustomerPage() {
-  const { name, email, phone } = useCustomerStore();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSubmissionOpen, setIsSubmissionOpen] = useState(false);
   const [step, setStep] = useState(1);
-  const { loading, submitQuery } = useCustomerSubmitQuery();
-  const [selectedMaterial, setSelectedMaterial] = useState(1); // Default: Yellow Gold
+  const { loading } = useCustomerSubmitQuery();
+  const [selectedMaterial, setSelectedMaterial] = useState(1);
   const [selectedDial, setSelectedDial] = useState(1);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [animationType, setAnimationType] = useState<
@@ -40,7 +38,7 @@ export default function CustomerPage() {
   }, []);
 
   const animationSequences = {
-    default: ["/img/frame436.png"], // Single frame for default view
+    default: ["/img/frame436.png"], 
     bezel: Array.from(
       { length: 27 },
       (_, i) => `/img/watch-sequence/Dial/frame${333 + i}.png`
@@ -67,16 +65,12 @@ export default function CustomerPage() {
     setIsAnimationComplete(false);
     setAnimationType(part);
 
-    // Reset animation sequence first
     setCurrentAnimationSequence([]);
 
-    // Set new animation sequence in next frame
     requestAnimationFrame(() => {
       if (part === "default") {
-        // For default view, use single frame
         setCurrentAnimationSequence(animationSequences.default);
       } else {
-        // For other parts, use their respective sequences
         setCurrentAnimationSequence(animationSequences[part]);
       }
     });
@@ -105,26 +99,6 @@ export default function CustomerPage() {
 
   const handleFinish = async () => {
     try {
-      // await submitQuery({
-      //   customerDetails: {
-      //     name,
-      //     email,
-      //     phone,
-      //   },
-      //   watchDial: dials[selectedDial],
-      //   watchMaterial: materials[selectedMaterial],
-      // });
-      // await addProduct({
-      //   name: formData.name,
-      //   email: formData.email,
-      //   phone: formData.phone,
-      //   product: {
-      //     material: materials[selectedMaterial],
-      //     dial: dials[selectedDial],
-      //     price: 150000,
-      //     watchName: "Watch Name",
-      //   },
-      // });
       setIsSubmissionOpen(true);
     } catch (err) {
       console.error("Error saving product:", err);
@@ -319,7 +293,6 @@ export default function CustomerPage() {
             </div>
           </div>
         ) : (
-          // Existing desktop layout (you already had this here)
           <div className="absolute w-full max-w-7xl">
             <div className="text-center mb-8">
               <h1 className="text-white font-bold text-5xl">Watch Name</h1>
@@ -352,7 +325,7 @@ export default function CustomerPage() {
                           </button>
                         )
                       )
-                    : // Updated dial section to match material section
+                    : 
                       ["default", "bezel", "toggle", "backStrap"].map(
                         (part) => (
                           <button

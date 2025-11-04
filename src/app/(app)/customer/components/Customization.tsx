@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import React, { useState, useEffect, useRef } from "react";
 import ScrollBtnSelector from "./ScrollBtnSelector";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-// import Navbar from "../../_components/layout/Navbar";
 import Image from "next/image";
 import { WatchDial, WatchMaterial } from "@/payload-types";
 import { useStore } from "../../_store/store";

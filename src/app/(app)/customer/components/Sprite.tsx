@@ -1,4 +1,3 @@
-// --- Fixed Sprite.tsx ---
 import React, { useEffect, useRef, useState } from "react";
 
 interface SpriteProps {
@@ -32,7 +31,6 @@ const Sprite: React.FC<SpriteProps> = ({
   const [scale, setScale] = useState(1);
   const [currentImage, setCurrentImage] = useState(images[0] || '');
 
-  // Preload all images
   useEffect(() => {
     images.forEach((src) => {
       const img = new Image();
@@ -79,14 +77,13 @@ const Sprite: React.FC<SpriteProps> = ({
 
       if (elapsed >= frameTime) {
           if (animationType === 'default') {
-          // For default view, immediately show first frame and complete
           frameIndex.current = 0;
           setCurrentImage(images[0]);
           if (!completedRef.current && onComplete) {
             completedRef.current = true;
             onComplete();
           }
-          return; // Stop animation for default view
+          return; 
         }
 
         frameIndex.current++;
@@ -98,7 +95,7 @@ const Sprite: React.FC<SpriteProps> = ({
           if (loop) {
             frameIndex.current = 0;
           } else {
-            return; // Stop animation
+            return;
           }
         }
         setCurrentImage(images[frameIndex.current]);

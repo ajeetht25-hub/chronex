@@ -34,12 +34,11 @@ export default function CustomerForm() {
     toast.success("Customer Added Successfully");
   };
   useEffect(() => {
-    // if no name and email and phone is available and the dialog is not opened , open the dialog
 
     if ((!name || !email || !phone) && !isOpen) {
       setIsOpen(true);
     }
-  }, []);
+  }, [name, email, phone, isOpen]);
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       {/* Background Overlay */}
