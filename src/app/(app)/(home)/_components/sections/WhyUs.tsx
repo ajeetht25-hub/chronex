@@ -6,19 +6,19 @@ const WhyUsCardContent = [
     icon: "/icons/icon1.svg",
     title: "Precision Crafted Timepiece",
     desc: "Engineered with an automatic movement, robust case construction, and refined finishing for lasting performance.",
-    link: "#",
+    link: "/products",
   },
   {
     icon: "/icons/icon2.svg",
     title: "Timeless Design Language",
     desc: "A balanced dial and polished indices create an elegant silhouette that reads as well in the boardroom as on the wrist.",
-    link: "#",
+    link: "/products",
   },
   {
     icon: "/icons/icon3.svg",
     title: "Bespoke Custom Finishes",
     desc: "Choose from a selection of straps, dial treatments, and engravings to personalize your watch with subtlety.",
-    link: "#",
+    link: "/products",
   },
 ];
 
@@ -30,9 +30,9 @@ const WhyUs = () => {
         <h2 className="rounded-full px-6 py-1 border-white border-2 text-sm text-white">
           Why Us
         </h2>
-        <div className="text-white lg:w-1/2 text-center">
+        <div className="text-white lg:w-[80%] text-center">
           <p className="font-bold text-5xl lg:text-6xl">Precision Crafted Timepiece</p>
-          <p className="text-xl lg:text-2xl">
+          <p className="text-xl lg:text-2xl pt-2">
             Each collection reflects decades of horological expertise, marrying
             mechanical excellence with enduring, refined aesthetics.
           </p>

@@ -8,29 +8,25 @@ import {
 } from "@/components/ui/accordion";
 const FAQCardContent = [
   {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
+    "title": "Can I customize every part of the watch?",
+    "desc": "Yes. You can personalize nearly every element — including the dial, bezel, strap, and case. Our design tool lets you visualize your watch in real time before you place your order."
   },
   {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
+    "title": "How long does it take to receive a customized watch?",
+    "desc": "Each timepiece is crafted with precision and care. Typically, customized orders take 2–4 weeks to complete, depending on design complexity and selected materials."
   },
   {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
+    "title": "Do you offer international shipping?",
+    "desc": "Absolutely. We ship worldwide using trusted delivery partners. Shipping time and costs vary based on your location and will be calculated at checkout."
   },
   {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
+    "title": "What materials are used in your watches?",
+    "desc": "We use premium-grade stainless steel, sapphire crystal glass, and Swiss movements for unmatched durability and precision. You can also choose from a range of leather, metal, or rubber straps to suit your style."
   },
   {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
-  },
-  {
-    title: "Lorem Ipsum?",
-    desc: "Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis. ",
-  },
+    "title": "Is there a warranty on the watches?",
+    "desc": "Yes. Every watch comes with a 2-year international warranty covering manufacturing defects. Our support team is always ready to assist with repairs or replacements if needed."
+  }
 ];
 
 const FAQ = () => {
