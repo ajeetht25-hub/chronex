@@ -52,12 +52,6 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
             >
               Products
             </Link>
-            <Link
-              href="/customer"
-              className="block text-white hover:text-gray-200"
-            >
-              Customise Watches
-            </Link>
           </nav>
         </div>
       </div>

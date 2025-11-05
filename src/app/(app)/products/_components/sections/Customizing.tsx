@@ -13,7 +13,7 @@ const Customizing = () => {
               Crafting luxurious watches
             </h1>
             <p className="text-xl text-white">
-              Personalize your timepiece with Vasuki, where craftsmanship meets
+              Personalize your timepiece with Chronex, where craftsmanship meets
               individuality. Customize every detail to reflect your unique style
               and sophistication.
             </p>
@@ -29,11 +29,11 @@ const Customizing = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:justify-between px-3">
           <h1 className="text-white text-6xl font-bold">
-            Explore the vasuki collection
+            Explore the Chronex collection
           </h1>
           <div className="flex flex-col gap-2 lg:max-w-1/2">
             <p className="text-white text-xl lg:text-3xl">
-              The Vasuki collection offers a wide range of prestigious,
+              The Chronex collection offers a wide range of prestigious,
               high-precision timepieces, from Professional to Classic models to
               suit any wrist.
             </p>

@@ -31,7 +31,7 @@ const Footer = () => {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-3xl font-semibold">Vasuki</span>
+                <span className="text-3xl font-semibold">Chronex</span>
               </div>
               <Link href={"/contact"} className="bg-black h-auto text-white text-[1rem] px-12 py-3 rounded">
                 Contact Us
@@ -69,12 +69,6 @@ const Footer = () => {
                   className="block text-black hover:text-gray-700"
                 >
                   Products
-                </Link>
-                <Link
-                  href="/customer"
-                  className="block text-black hover:text-gray-700"
-                >
-                  Customise Watches
                 </Link>
               </nav>
             </div>

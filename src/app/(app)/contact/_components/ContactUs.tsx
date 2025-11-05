@@ -61,9 +61,9 @@ const ContactUs = () => {
             <div className="w-3/4">
               <p className="font-bold text-sm lg:text-lg">Email Us</p>
               <p className="text-xs mt-4 lg:text-lg sm:mt-2">
-                Telephone : +91 78346 36432
+                Telephone : +91 9876543210
               </p>
-              <p className="text-xs sm:text-xs">Email : vasuki@domain.com</p>
+              <p className="text-xs sm:text-xs">Email : example@domain.com</p>
             </div>
             <div className="relative h-40 w-40 lg:max-h-[160px] -right-10 sm:h-20 sm:w-20 max-h-[70px]">
               <Image

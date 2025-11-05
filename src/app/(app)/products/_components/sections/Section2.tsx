@@ -4,23 +4,25 @@ import WhyUsCard from "../../../_components/WhyUsCard";
 const WhyUsCardContent = [
   {
     icon: "/icons/icon1.svg",
-  title: "Heritage Oyster timepiece",
-  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
-    link: "/about",
+    title: "Precision Movement",
+    desc: "Powered by advanced mechanical engineering, this timepiece ensures flawless accuracy and smooth performance in every tick.",
+    link: "/about"
   },
   {
     icon: "/icons/icon2.svg",
-  title: "Heritage Oyster timepiece",
-  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
-    link: "/about",
+    title: "Master Craftsmanship",
+    desc: "Hand-assembled by expert artisans, each watch embodies decades of horological mastery and elegant sophistication.",
+    link: "/about"
   },
   {
     icon: "/icons/icon3.svg",
-  title: "Heritage Oyster timepiece",
-  desc: "A meticulously engineered automatic movement in a corrosion-resistant case, offering precise timekeeping and enduring elegance.",
-    link: "/about",
-  },
-];
+    title: "Enduring Design",
+    desc: "Built to transcend trends, our designs combine durability and artistry to create a watch that lasts a lifetime.",
+    link: "/about"
+  }
+]
+
+
 
 const Section2 = () => {
   return (

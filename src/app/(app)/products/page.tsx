@@ -13,7 +13,6 @@ const Page = async () => {
       <Navbar />
       <ProductHero />
       <Section2 />
-      <Section2 />
       <Customizing />
       <ShopMap shopPlaces={fetchLocations} />
     </>
