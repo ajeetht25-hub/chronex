@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-// import WhyUsCard from "../../../_components/WhyUsCard";
-// import Navbar from "@/app/(app)/_components/layout/Navbar";
 
 const Content = [
   {
@@ -28,14 +26,8 @@ const Content = [
 const ProductHero = () => {
   return (
     <div className="px-5 lg:px-20 xl:container xl:mx-auto pb-3 pt-2">
-      {/* <Navbar /> */}
       <div
         className="relative text-white flex justify-start items-start h-full w-full"
-        // style={{
-        //   backgroundImage: `url(${HeroImg})`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
       >
         <div className=" bg-black bg-opacity-40 w-full h-full relative rounded-2xl lg:rounded-[2.5rem]">
           <div className="">
@@ -44,25 +36,18 @@ const ProductHero = () => {
                 Redefining Luxury Timepieces.
               </h1>
               <p className="text-2xl w-full lg:w-2/3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam,{" "}
+                Experience the fusion of art and precision. Our handcrafted watches are built to reflect your personality — timeless, bold, and uniquely yours.
               </p>
               <Link
-                href={"/"}
+                href={"/customer"}
                 className="text-black bg-white bg-gradient-to-b from-white to-[#4DC6E2] text-xl font-bold py-3 px-6 rounded-xl h-auto"
               >
-                Know More
+                Start Customizing
               </Link>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="flex lg:flex-row flex-col gap-6 pt-5 lg:pt-36">
-        {Content.map((content, index) => (
-          <WhyUsCard {...content} key={index} />
-        ))}
-      </div> */}
     </div>
   );
 };

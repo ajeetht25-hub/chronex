@@ -110,11 +110,6 @@ const KnowMore = () => {
             Designed for daily wear, our watches combine durable engineering
             with refined detailing to perform reliably while looking impeccable.
           </p>
-          <div>
-            <Button className="text-black bg-white text-base lg:text-xl font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-xl h-auto">
-              Know More
-            </Button>
-          </div>
         </div>
       </div>
       <div className="knowmore-section flex flex-col relative z-[60] lg:z-0 lg:flex-row justify-between items-center w-full h-screen">
@@ -129,11 +124,6 @@ const KnowMore = () => {
             Our artisans assemble and finish each movement by hand, ensuring
             precision regulation and a level of quality that endures for years.
           </p>
-          <div>
-            <Button className="text-black bg-white text-base lg:text-xl font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-xl h-auto hover:bg-gray-100">
-              Know More
-            </Button>
-          </div>
         </div>
         <div className="hidden lg:block">{/* img placeholder */}</div>
       </div>
@@ -206,10 +196,6 @@ const KnowMore = () => {
                   className="object-contain"
                 />
               </div>
-            </Button>
-
-            <Button className="text-black bg-white text-base lg:text-xl font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-xl h-auto hover:bg-gray-100 cursor-pointer relative z-[999]">
-              Know More
             </Button>
           </div>
         </div>

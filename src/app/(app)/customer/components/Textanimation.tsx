@@ -13,7 +13,7 @@ interface InfiniteScrollProps {
   items: Item[];
   itemSpacing?: number;
   isTilted?: boolean;
-  initialIndex?: number; // ✅ NEW PROP
+  initialIndex?: number; 
 }
 
 export default function InfiniteScroll({
@@ -21,7 +21,7 @@ export default function InfiniteScroll({
   items = [],
   itemSpacing = 80,
   isTilted = false,
-  initialIndex = 1, // ✅ Default to 0
+  initialIndex = 1, 
 }: InfiniteScrollProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(initialIndex);
@@ -59,7 +59,6 @@ export default function InfiniteScroll({
       },
     });
 
-    // Initial alignment
     textElements.forEach((el, i) => {
       gsap.set(el, {
         y: ((i - selectedIndex) * itemSpacing) + (window.innerHeight / 2 - itemSpacing),

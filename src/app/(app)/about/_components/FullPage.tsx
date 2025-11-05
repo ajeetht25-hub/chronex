@@ -45,7 +45,7 @@ const FullPage = () => {
         <div className="about-section2 flex justify-center items-center w-full pt-20 lg:pt-20 h-screen">
           {/* second */}
           <div className="flex relative flex-col w-full h-full items-center justify-center lg:-mt-20">
-            <h2 className="font-bold text-3xl lg:w-4/5 text-center lg:text-8xl leading-tight z-10">
+            <h2 className="font-bold text-3xl pb-14 lg:w-4/5 text-center lg:text-8xl leading-tight z-10">
               Heritage Oyster timepiece
             </h2>
             <p className="text-[19rem] leading-[1] text-black font-bold select-none">
@@ -58,11 +58,6 @@ const FullPage = () => {
               Every component is finished by hand and tuned to exacting
               tolerances, delivering accuracy and enduring style.
             </p>
-            <div className="flex justify-center items-center pt-8">
-              <Button className="cursor-pointer text-black bg-white bg-gradient-to-b from-white to-[#4DC6E2] text-xl font-semibold py-3 px-6 rounded-xl h-auto">
-                Know More
-              </Button>
-            </div>
           </div>
         </div>
         <div className="about-section3 flex justify-between items-center w-full h-screen">
@@ -78,9 +73,9 @@ const FullPage = () => {
                 materials for long-lasting performance.
               </p>
               <div className="flex justify-center items-center pt-8">
-                <Button className="cursor-pointer text-black bg-white bg-gradient-to-b from-white to-[#4DC6E2] text-xl font-semibold py-3 px-6 rounded-xl h-auto">
+                <Link href={"/customer"} className="cursor-pointer text-black bg-white bg-gradient-to-b from-white to-[#4DC6E2] text-xl font-semibold py-3 px-6 rounded-xl h-auto">
                   Know More
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import React, { useState, useEffect, useRef } from "react";
 import ScrollBtnSelector from "./ScrollBtnSelector";
 import { ArrowRight, ArrowLeft } from "lucide-react";
-// import Navbar from "../../_components/layout/Navbar";
 import Image from "next/image";
 import { WatchDial, WatchMaterial } from "@/payload-types";
 import { useStore } from "../../_store/store";
@@ -22,7 +21,7 @@ interface CustomizationProps {
   images: WatchImage["images"];
 }
 
-type ViewMode = "normal" | "zoomed" | "animation1" | "animation2";
+type ViewMode = "normal" | "zoomed";
 
 const Customization = ({ materials, dials, images }: CustomizationProps) => {
   const [currentView, setCurrentView] = useState<"material" | "dial">(
@@ -232,8 +231,7 @@ const Customization = ({ materials, dials, images }: CustomizationProps) => {
         <SubmitDialog open={submitDialog} onOpenChange={setSubmitDialog} />
         {/* <Navbar isFixed={true} /> */}
         <div className="flex flex-col items-center justify-between py-10 gap-5 lg:px-12">
-          <p className="text-center text-5xl font-bold text-white">
-            Watch Name
+          <p className="h-5">
           </p>
           <div className="lg:flex lg:flex-row gap-3 items-center justify-center lg:h-[30rem] w-full">
             {/* Mobile */}
@@ -268,9 +266,6 @@ const Customization = ({ materials, dials, images }: CustomizationProps) => {
                   />
                 )}
               </div>
-              {viewMode === "animation1" || viewMode === "animation2" ? (
-                <div className="h-[28rem] w-full"></div>
-              ) : null}
             </div>
             <div className="lg:basis-1/3 order-2 lg:order-1">
               <p className="font-bold text-white lg:text-7xl  text-4xl">
@@ -303,28 +298,6 @@ const Customization = ({ materials, dials, images }: CustomizationProps) => {
                       className="object-contain overflow-hidden"
                     />
                   )}
-                </div>
-                <div
-                  onClick={() => toggleViewMode("animation1")}
-                  className={`relative hidden lg:block h-16 w-16 rounded-full cursor-pointer border-2 border-white ${viewMode === "animation1" ? "border-yellow-400" : "border-white"}`}
-                >
-                  <Image
-                    src={"/img/watches/animation-1.png"}
-                    alt="watch"
-                    fill
-                    className="object-contain overflow-hidden"
-                  />
-                </div>
-                <div
-                  onClick={() => toggleViewMode("animation2")}
-                  className={`relative hidden lg:block h-16 w-16 rounded-full cursor-pointer border-2 border-white ${viewMode === "animation2" ? "border-yellow-400" : "border-white"}`}
-                >
-                  <Image
-                    src={"/img/watches/animation-2.png"}
-                    alt="watch"
-                    fill
-                    className="object-contain overflow-hidden"
-                  />
                 </div>
               </div>
               <div className="text-white py-3 hidden lg:block">
@@ -382,64 +355,6 @@ const Customization = ({ materials, dials, images }: CustomizationProps) => {
               )}
             </div>
           </div>
-          {viewMode === "animation1" && (
-            <div className="absolute inset-0 w-full h-full">
-              <div className="absolute bottom-0 right-0">
-                <Image
-                  src="/img/watches/animation-1.png"
-                  alt="watch"
-                  className="animate-in"
-                  style={{
-                    animation: "watch-skew 1s ease-in-out",
-                  }}
-                  width={700}
-                  height={700}
-                />
-              </div>
-              <style jsx>{`
-                @keyframes watch-skew {
-                  0% {
-                    transform: translateX(100px) skew(10deg, 0deg);
-                    opacity: 0;
-                  }
-                  100% {
-                    transform: translateX(0) skew(0deg, 0deg);
-                    opacity: 1;
-                  }
-                }
-              `}</style>
-            </div>
-          )}
-
-          {viewMode === "animation2" && (
-            <div className="absolute inset-0 w-full h-full">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <Image
-                  src="/img/watches/animation-2.png"
-                  alt="watch"
-                  className="animate-in"
-                  style={{
-                    animation: "watch-skew 1s ease-in-out",
-                  }}
-                  width={700}
-                  height={700}
-                />
-              </div>
-              <style jsx>{`
-                @keyframes watch-skew {
-                  0% {
-                    transform: translateX(-100px) skew(10deg, 0deg);
-                    opacity: 0;
-                  }
-                  100% {
-                    transform: translateX(0) skew(0deg, 0deg);
-                    opacity: 1;
-                  }
-                }
-              `}</style>
-            </div>
-          )}
-
           <div className="w-full lg:w-auto">
             <div className="flex px-4 lg:px-0 items-center justify-between lg:justify-between gap-4 relative z-20">
               <div className="text-white py-3 block lg:hidden">

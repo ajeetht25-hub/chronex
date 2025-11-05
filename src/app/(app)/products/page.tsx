@@ -3,7 +3,7 @@ import ProductHero from "./_components/sections/ProductHero";
 import Customizing from "./_components/sections/Customizing";
 import ShopMap from "./_components/sections/ShopMap";
 import { fetchLocation } from "../_actions/fetch";
-import Section2 from "./_components/sections/Section2";
+import ProductWhyUsSection from "./_components/sections/ProductWhyUsSection";
 import Navbar from "../_components/layout/Navbar";
 
 const Page = async () => {
@@ -12,8 +12,7 @@ const Page = async () => {
     <>
       <Navbar />
       <ProductHero />
-      <Section2 />
-      <Section2 />
+      <ProductWhyUsSection />
       <Customizing />
       <ShopMap shopPlaces={fetchLocations} />
     </>

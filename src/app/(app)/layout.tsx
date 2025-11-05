@@ -8,8 +8,8 @@ import { Toaster } from "@/components/ui/sonner";
 const syne = Syne({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Vasuki - Home",
-  description: "Vasuki watch site",
+  title: "Chronex - Home",
+  description: "Chronex watch site",
 };
 
 export default function RootLayout({
