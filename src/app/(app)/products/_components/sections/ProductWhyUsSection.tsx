@@ -24,7 +24,7 @@ const WhyUsCardContent = [
 
 
 
-const Section2 = () => {
+const ProductWhyUsSection = () => {
   return (
     <div className="xl:container xl:mx-auto px-10 py-10 lg:px-20">
       <div className="flex lg:flex-row flex-col gap-6 pt-5">
@@ -36,4 +36,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default ProductWhyUsSection;
