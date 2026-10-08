@@ -1,19 +1,15 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS-20'
-    }
-
     environment {
         NODE_ENV = 'production'
     }
 
     stages {
-
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
+                echo 'Checking out Chronex...'
+
                 git branch: 'main',
                     url: 'https://github.com/ajeetht25-hub/chronex.git'
             }
@@ -35,14 +31,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building Next.js application...'
+                echo 'Building Chronex...'
                 sh 'npm run build'
             }
         }
 
-        stage('Archive Build') {
+        stage('Archive') {
             steps {
-                echo 'Archiving build artifacts...'
+                echo 'Archiving build...'
+
                 archiveArtifacts artifacts: '.next/**',
                     allowEmptyArchive: false
             }
@@ -51,20 +48,11 @@ pipeline {
 
     post {
         success {
-            echo '======================================'
-            echo 'Build completed successfully!'
-            echo '======================================'
+            echo 'Chronex build completed successfully!'
         }
 
         failure {
-            echo '======================================'
-            echo 'Build failed!'
-            echo 'Check the Jenkins console output.'
-            echo '======================================'
-        }
-
-        always {
-            echo 'Jenkins pipeline finished.'
+            echo 'Chronex build failed!'
         }
     }
 }
